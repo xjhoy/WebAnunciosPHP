@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  background-color: #f2f2f2;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  border-top: 40px solid #303F9F; }
+
+.contenedor {
+  width: 100%; }
+  .contenedor .nav {
+    width: 90%;
+    margin: auto;
+    background-color: #BBDEFB;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px grey; }
+    .contenedor .nav ul {
+      padding: 20px;
+      text-align: right; }
+      .contenedor .nav ul li {
+        display: inline;
+        margin-left: 30px;
+        cursor: pointer; }
+        .contenedor .nav ul li a {
+          border-radius: 5px;
+          background-color: #303F9F;
+          padding: 10px;
+          text-decoration: none;
+          color: #f2f2f2;
+          -webkit-transition: all 0.3s ease;
+          -o-transition: all 0.3s ease;
+          transition: all 0.3s ease; }
+          .contenedor .nav ul li a:hover {
+            color: #fff;
+            font-weight: bold;
+            background-color: rgba(48, 63, 159, 0.8); }
+  .contenedor .formulario {
+    margin-top: 30px;
+    width: 40%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px grey;
+    padding: 30px; }
+  .contenedor .titulo {
+    text-align: center;
+    font-weight: 300;
+    margin-bottom: 30px; }
+  .contenedor form {
+    margin: auto;
+    width: 100%; }
+    .contenedor form .input-group {
+      margin: auto; }
+      .contenedor form .input-group label {
+        font-size: 18px;
+        margin-left: 30px; }
+      .contenedor form .input-group input {
+        display: block;
+        margin: 20px; }
+      .contenedor form .input-group input[type="text"],
+      .contenedor form .input-group input[type="password"] {
+        width: 90%;
+        border: none;
+        font-size: 16px;
+        border-bottom: 2px solid #4143ff;
+        overflow: hidden; }
+      .contenedor form .input-group input[type="submit"] {
+        border: none;
+        width: 20%;
+        height: 40px;
+        margin: auto;
+        cursor: pointer; }
+
+.error {
+  margin-top: 50px; }
+  .error .alerta {
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    height: 50px;
+    padding: 15px;
+    border: 2px solid #dc3537;
+    background-color: #dc5c61;
+    border-radius: 5px; }
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,94 @@
+$font-family: 'Roboto', sans-serif
+$primary: #303F9F
+$light-primary: #BBDEFB
+$white: #f2f2f2
+$divider: #B6B6B6
+$error: #D32F2F
+
+*
+  margin: 0
+  padding: 0
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+body
+  background-color: $white
+  font-family: $font-family
+  font-weight: 300
+  border-top: 40px solid $primary
+.contenedor
+  width: 100%
+  .nav
+    width: 90%
+    margin: auto
+    background-color: $light-primary
+    border-radius: 3px
+    box-shadow: 1px 1px 2px grey
+    ul
+      padding: 20px
+      text-align: right
+      li
+        display: inline
+        margin-left: 30px
+        cursor: pointer
+        a
+          border-radius: 5px
+          background-color: $primary
+          padding: 10px
+          text-decoration: none
+          color: $white
+          -webkit-transition: all .3s ease
+          -o-transition: all .3s ease
+          transition: all .3s ease
+          &:hover
+            color: #fff
+            font-weight: bold
+            background-color: rgba($primary,0.8)
+
+  .formulario
+    margin-top: 30px
+    width: 40%
+    background-color: white
+    border-radius: 10px
+    box-shadow: 1px 1px 2px grey
+    padding: 30px
+  .titulo
+    text-align: center
+    font-weight: 300
+    margin-bottom: 30px
+  form
+    margin: auto
+    width: 100%
+    .input-group
+      margin: auto
+      label
+        font-size: 18px
+        margin-left: 30px
+      input
+        display: block
+        margin: 20px
+      input[type="text"],
+      input[type="password"]
+        width: 90%
+        border: none
+        font-size: 16px
+        border-bottom: 2px solid #4143ff
+        overflow: hidden
+      input[type="submit"]
+        border: none
+        width: 20%
+        height: 40px
+        margin: auto
+        cursor: pointer
+.error
+  margin-top: 50px
+  .alerta
+    text-align: center
+    margin: auto
+    width: 50%
+    height: 50px
+    padding: 15px
+    border: 2px solid rgba(220, 53, 55, 1)
+    background-color: rgba(220, 92, 97, 1)
+    border-radius: 5px
