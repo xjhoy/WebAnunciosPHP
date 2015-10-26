@@ -11,13 +11,20 @@ if(isset($_POST["titulo"]) && !empty($_POST["titulo"]) &&
     isset($_POST["anuncio"]) && !empty(["anuncio"]) &&
     isset($_SESSION["username"]) && !empty($_SESSION["username"])){
 
-    $con = mysql_connect($HOST,$USER,$PW) or die("No conectado");
-    mysql_select_db($DB,$con)or die("Error en base de datos");
+    try{
 
-    mysql_query("INSERT INTO tbanuncio (titulo, anuncio,autor) VALUES ('$_POST[titulo]','$_POST[anuncio]','$_SESSION[username]')",$con)
-    or die ("no funciona la sentencia sql " . mysql_error());
+        $conn = new PDO("mysql:host=$HOST;dbname=$DB",$USER,$PW);
+        $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+        $sql = "INSERT INTO tbanuncio (titulo, anuncio,autor)
+          VALUES ('$_POST[titulo]','$_POST[anuncio]','$_SESSION[username]')";
 
-    header("Location:/LoginPHP/PanelControl.php");
+        $conn->exec($sql);
+        header("Location:/LoginPHP/MisAnuncios.php");
+
+    }catch (PDOException $e){
+        $error = true;
+        header("Location:/LoginPHP/CrearAnuncio.php?error=".$error);
+    }
 
 }else{
     $error = true;

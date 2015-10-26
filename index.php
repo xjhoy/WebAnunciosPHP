@@ -13,16 +13,15 @@
     <div class="contenedor">
         <div class="nav">
             <ul>
-                <li><a href="#!">Enlace</a></li>
-                <li><a href="#!">Enlace</a></li>
+                <li>Anuncios hechos en php</li>
                 <li><a href="Insertar.php">Registrar usuario</a></li>
             </ul>
         </div>
-        <form action="modelos/autentificar.php" method="post" name="form" class="formulario">
+        <form action="modelos/autentificar.php" method="post" name="form" class="formulario-login">
             <h1 class="titulo">Iniciar Sesión</h1>
             <div class="input-group">
-                <label for="nombre">Usuario</label>
-                <input type="text" id="nombre" name="nombre" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
             </div>
             <div class="input-group">
                 <label for="pw">Password</label>

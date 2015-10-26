@@ -17,6 +17,24 @@ body
   font-family: $font-family
   font-weight: 300
   border-top: 40px solid $primary
+  background-image: url("../img/fondo01.jpg")
+  background-size: cover
+  background-position: center,center
+  background-attachment: fixed
+  background-repeat: no-repeat
+
+.wrap
+  margin-top: 50px
+
+.contenedor-info
+  margin: auto
+  width: 70%
+  background-color: white
+  border-radius: 5px
+  padding: 25px
+  h1
+    text-align: center
+    
 .contenedor
   width: 100%
   .nav
@@ -46,9 +64,16 @@ body
             font-weight: bold
             background-color: rgba($primary,0.8)
 
-  .formulario
+  .formulario-login
     margin-top: 30px
-    width: 40%
+    width: 30%
+    background-color: white
+    border-radius: 10px
+    box-shadow: 1px 1px 2px grey
+    padding: 30px
+  .formulario-crear
+    margin-top: 30px
+    width: 60%
     background-color: white
     border-radius: 10px
     box-shadow: 1px 1px 2px grey
@@ -60,15 +85,16 @@ body
   form
     margin: auto
     width: 100%
+    display: block
     .input-group
       margin: auto
       label
-        font-size: 18px
         margin-left: 30px
       input
         display: block
         margin: 20px
       input[type="text"],
+      input[type="email"],
       input[type="password"]
         width: 90%
         border: none
@@ -80,7 +106,33 @@ body
         width: 20%
         height: 40px
         margin: auto
+        color: white
+        background-color: $primary
+        border-radius: 5px
         cursor: pointer
+      input:required
+        &:focus
+          outline: none
+      textarea
+        display: block
+        margin: 20px
+        outline: none
+        border: 2px solid #4143ff
+        width: 70%
+        height: 200px
+.contenedor-tabla
+  display: table
+  width: 100%
+  .contenedor-fila
+    display: table-row
+    .contenedor-columna
+      display: table-cell
+
+.dato
+  padding: 5px
+  border: 1px solid $divider
+  margin: 2px
+  border-radius: 5px
 .error
   margin-top: 50px
   .alerta

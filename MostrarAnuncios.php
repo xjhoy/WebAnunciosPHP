@@ -4,29 +4,33 @@
 <!-- Pagina para ver todos los anuncios de todos los usuarios de la aplicación-->
     <meta charset="UTF-8">
     <title>Anuncios</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 <div class="contenedor">
+<div class="wrap">
+    <div class="contenedor-info">
+        <h1>Todos los anuncios</h1>
+        <?php
+        include("modelos/Conexion.php");
 
-<?php
-include("modelos/Conexion.php");
-session_start();
-$con = mysql_connect($HOST,$USER,$PW) or die("No conectado");
-mysql_select_db($DB,$con)or die("Error en base de datos");
+        session_start();
+        $conn = new PDO("mysql:host=$HOST;dbname=$DB",$USER,$PW);
+        $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+        $sql = "SELECT * FROM tbanuncio";
+        $datos = $conn->query($sql);
+        foreach($datos as $row): ?>
 
-$rs = mysql_query("SELECT * FROM tbanuncio",$con)
-or die ("no funciona la sentencia sql " . mysql_error());
+            <ul class="dato">
+                <li><?php echo $row["titulo"]; ?></li>
+                <li><?php echo $row["anuncio"]; ?></li>
+            </ul>
 
-while($reg = mysql_fetch_array($rs)){
-    echo '
-        <div class="">
-            <h2>'. $reg["titulo"] .'</h2>
-            <p>'. $reg["anuncio"] .'</p>
-        </div>
-        ';
-}
-?>
+        <?php endforeach; ?>
 
+    </div>
+
+</div>
 </div>
 </body>
 </html>
